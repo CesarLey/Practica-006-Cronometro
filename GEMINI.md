@@ -1,47 +1,31 @@
-# Project: Weather App (tiempoapp)
+# Gemini Code Understanding
 
 ## Project Overview
 
-This is a Flutter mobile application for Android and iOS, likely intended to be a weather application given the project name "tiempoapp".
+### Project Goal
 
-The project follows a **Clean Architecture** pattern, separating concerns into `core` and `features` directories. This structure promotes maintainability, scalability, and testability.
+Build a timer application in Flutter to teach state management using the BLOC pattern and Clean Architecture principles.
 
-*   **Core:** Contains shared functionalities like error handling (`lib/core/error`), network utilities (`lib/core/network`), and base classes for use cases (`lib/core/usecases`).
-*   **Features:** This directory is intended to hold the different features of the application (e.g., weather forecast, location search). It is currently empty.
+### Key Technologies & Patterns
 
-The project uses the following key dependencies:
+- **State Management:** Use the `flutter_bloc` package. All state logic must be handled by a TimerBloc.
+- **Architecture:** Follow Clean Architecture principles with a feature-first structure. The main directories under `lib/`should be `core/` and `features/`. Each feature should be self-contained with `application`, `data`, `domain`, and `presentation` layers.
+- **Code Style:** Adhere to Dart's official style guide. Use sealed classes for BLoC states and events.
+- **Dependencies:** Key dependencies are `flutter_bloc`, `bloc`, `equatable`, and `wave`.
 
-*   `dartz`: For functional programming patterns, enabling robust error handling through `Either` and `Option` types.
-*   `equatable`: To simplify object equality checks.
+### Role of AI
+
+The AI should act as a teaching assistant and expert pair programmer. When asked for code, prioritize generating boilerplate or specific, well-defined functions. When asked for explanations, provide clear, concise answers with analogies relevant to a student audience. Encourage proactive prompting.
 
 ## Building and Running
 
-### 1. Install Dependencies
+### Prerequisites
 
-To install the necessary dependencies, run the following command in the project's root directory:
+- Flutter SDK
+- A configured emulator or a physical device
 
-```sh
-flutter pub get
-```
+### Key Commands
 
-### 2. Run the Application
-
-To run the application on a connected device or emulator, use the following command:
-
-```sh
-flutter run
-```
-
-### 3. Run Tests
-
-To execute the project's test suite, run:
-
-```sh
-flutter test
-```
-
-## Development Conventions
-
-*   **Coding Style:** The project adheres to the standard Dart and Flutter linting rules provided by the `flutter_lints` package. Custom linting rules can be configured in the `analysis_options.yaml` file.
-*   **Architecture:** New features should be developed within the `lib/features` directory, following the principles of Clean Architecture. Each feature should have its own domain, data, and presentation layers.
-*   **State Management:** (TODO) The current boilerplate code in `main.dart` uses `StatefulWidget`, but a more scalable state management solution (like BLoC or Provider) is expected to be implemented as the application grows.
+- **Get dependencies:** `flutter pub get`
+- **Run the app:** `flutter run --debug`
+- **Run tests:** `flutter test`
