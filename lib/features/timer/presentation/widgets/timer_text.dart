@@ -46,9 +46,9 @@ class TimerText extends StatelessWidget {
         final bottomInset = mq.viewInsets.bottom;
         return Padding(
           padding: EdgeInsets.only(bottom: bottomInset),
-          child: Container(
+            child: Container(
             decoration: BoxDecoration(
-              color: Theme.of(context).dialogBackgroundColor,
+              color: Theme.of(context).dialogTheme.backgroundColor ?? Theme.of(context).colorScheme.background,
               borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
             ),
             padding: const EdgeInsets.fromLTRB(16, 24, 16, 16),

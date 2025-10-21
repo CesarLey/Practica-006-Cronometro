@@ -40,8 +40,9 @@ class ActionsButtons extends StatelessWidget {
                   FloatingActionButton(
                     child: const Icon(Icons.replay),
                     onPressed: () async {
+                      final bloc = context.read<TimerBloc>();
                       if (onReset != null) await onReset!();
-                      context.read<TimerBloc>().add(const TimerReset());
+                      bloc.add(const TimerReset());
                     },
                   ),
                 ],
@@ -53,18 +54,20 @@ class ActionsButtons extends StatelessWidget {
                   ),
                   FloatingActionButton(
                     child: const Icon(Icons.replay),
-                    onPressed: () {
-                      if (onReset != null) onReset!();
-                      context.read<TimerBloc>().add(const TimerReset());
+                    onPressed: () async {
+                      final bloc = context.read<TimerBloc>();
+                      if (onReset != null) await onReset!();
+                      bloc.add(const TimerReset());
                     },
                   ),
                 ],
               TimerFinished() => [
                   FloatingActionButton(
                     child: const Icon(Icons.replay),
-                    onPressed: () {
-                      if (onReset != null) onReset!();
-                      context.read<TimerBloc>().add(const TimerReset());
+                    onPressed: () async {
+                      final bloc = context.read<TimerBloc>();
+                      if (onReset != null) await onReset!();
+                      bloc.add(const TimerReset());
                     },
                   ),
                 ],
