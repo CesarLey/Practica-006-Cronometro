@@ -33,13 +33,33 @@ migrate_working_dir/
 /build/
 /coverage/
 
+# Local configuration (sdk paths, keystore) - DO NOT COMMIT
+local.properties
+android/key.properties
+android/app/*.jks
+android/app/*.keystore
+
 # Symbolication related
 app.*.symbols
 
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# Android Studio/Gradle
+/.gradle/
+/**/build/
+/.idea/
+*.iml
+
+# Xcode
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Runner/Runner.xcworkspace/
+ios/Runner/Pods/
+DerivedData/
+
+# VSCode
+.vscode/

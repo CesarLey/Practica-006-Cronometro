@@ -1,16 +1,46 @@
 # tiempoapp
 
-A new Flutter project.
+Timer app built with Flutter.
 
-## Getting Started
+Autor: Cesar (migrado desde repo compartido)
 
-This project is a starting point for a Flutter application.
+## Requisitos
+- Flutter SDK (estable). Ejemplo probado con Flutter 3.35.5.
+- Android SDK (para ejecutar en Android)
 
-A few resources to get you started if this is your first Flutter project:
+## Ejecutar localmente
+1. Abrir terminal en la raíz del proyecto.
+2. Instalar dependencias:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```powershell
+flutter pub get
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Ejecutar la app en un dispositivo/emulador conectado:
+
+```powershell
+flutter run
+```
+
+4. Para compilar un APK de release:
+
+```powershell
+flutter build apk --release
+```
+
+## Cambiar icono y splash
+- Reemplaza `assets/icono_app.png` por tu logo (preferible PNG 1024x1024).
+- Ejecuta:
+
+```powershell
+flutter pub get
+flutter pub run flutter_launcher_icons:main
+```
+
+- Para el splash, coloca tu imagen como `android/app/src/main/res/mipmap-*/launch_image.png` y `ios/Runner/Assets.xcassets/LaunchImage.imageset/` según corresponda. El proyecto ya contiene configuraciones de ejemplo en `android/app/src/main/res/drawable/launch_background.xml`.
+
+## Seguridad
+- No comitees `local.properties`, keystores ni credenciales. Estos están incluidos en `.gitignore`.
+
+## Licencia
+Este proyecto es tuyo — súbelo a tu repositorio personal cuando estés listo.
